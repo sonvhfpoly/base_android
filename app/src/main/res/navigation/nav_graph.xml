@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        tools:layout="@layout/fragment_home"
+        android:name="com.vnextglobal.base.view.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        tools:layout="@layout/fragment_login"
+        android:name="com.vnextglobal.base.view.LoginFragment"
+        android:label="LoginFragment" />
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        tools:layout="@layout/fragment_movie_detail"
+        android:name="com.vnextglobal.base.view.MovieDetailFragment"
+        android:label="MovieDetailFragment" />
+</navigation>
