@@ -37,11 +37,15 @@ android {
 }
 
 dependencies {
+    // local modules
+    implementation(project(Dependencies.repoModule))
     // Core libs
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appcompat)
     implementation(Dependencies.material)
     implementation(Dependencies.constraint)
+    implementation(Dependencies.fragmentKtx)
+    implementation(Dependencies.activityKtx)
 
     // Navigation
     implementation(Dependencies.navigationUiKtx)
@@ -53,11 +57,19 @@ dependencies {
     androidTestImplementation(Dependencies.espresso)
 
     // Room
-    implementation(Dependencies.roomRuntime)
-    implementation(Dependencies.roomKtx)
+    api(Dependencies.roomRuntime)
+    api(Dependencies.roomKtx)
     kapt(Dependencies.roomCompiler)
 
     // Hilt
     implementation(Dependencies.hiltAndroid)
     kapt(Dependencies.hiltCompiler)
+
+    // retrofit
+    implementation(Dependencies.retrofit)
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }

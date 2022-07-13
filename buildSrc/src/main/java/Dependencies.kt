@@ -3,6 +3,8 @@ object BuildPlugins {
     const val androidKotlin = "android"
     const val kaptKotlin = "kapt"
     const val hilt = "dagger.hilt.android.plugin"
+    const val androidLibrary = "com.android.library"
+    const val androidLibraryKotlin = "org.jetbrains.kotlin.android"
 }
 
 object AppConfig {
@@ -21,6 +23,7 @@ object BuildConfig {
     const val jvmTarget = "11"
     const val defaultProguardFile = "proguard-android-optimize.txt"
     const val proguardRules = "proguard-rules.pro"
+    const val consumerRules = "consumer-rules.pro"
 }
 
 object Dependencies {
@@ -31,6 +34,8 @@ object Dependencies {
         const val appcompat = "1.4.2"
         const val material = "1.6.1"
         const val constraint = "2.1.4"
+        const val fragmentKtx = "1.5.0"
+        const val activityKtx = "1.5.0"
         // Navigation
         const val navVersion = "2.5.0"
         // Test libs
@@ -40,14 +45,22 @@ object Dependencies {
         // Room
         const val roomVersion = "2.4.2"
         //Hilt
-        const val hilt = "2.38.1"
+        const val hilt = "2.42"
+        // retrofit
+        const val retrofit = "2.9.0"
+        const val loggingInterceptor = "3.9.0"
+        const val gsonConverter = "2.9.0"
     }
 
+    // modules
+    const val repoModule = ":core"
     // Core libs
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
     const val material = "com.google.android.material:material:${Versions.material}"
     const val constraint = "androidx.constraintlayout:constraintlayout:${Versions.constraint}"
+    const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}"
+    const val activityKtx = "androidx.activity:activity-ktx:${Versions.activityKtx}"
     // Navigation
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navVersion}"
     const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navVersion}"
@@ -62,4 +75,8 @@ object Dependencies {
     // Hilt
     const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val hiltCompiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+    // Retrofit
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.loggingInterceptor}"
+    const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.gsonConverter}"
 }
