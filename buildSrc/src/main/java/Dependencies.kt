@@ -48,12 +48,19 @@ object Dependencies {
         const val hilt = "2.42"
         // retrofit
         const val retrofit = "2.9.0"
-        const val loggingInterceptor = "3.9.0"
+        const val loggingInterceptor = "4.10.0"
         const val gsonConverter = "2.9.0"
+        // paging
+        const val pagingVersion = "3.1.1"
+        //glide
+        const val glide = "4.13.2"
+        // coil
+        const val coil = "2.1.0"
     }
 
     // modules
     const val repoModule = ":core"
+    const val androidFramework = ":aframework"
     // Core libs
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
@@ -79,4 +86,10 @@ object Dependencies {
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.loggingInterceptor}"
     const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.gsonConverter}"
+    const val paging = "androidx.paging:paging-runtime:${Versions.pagingVersion}"
+    // glide
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val glideProcessor = "com.github.bumptech.glide:compiler:${Versions.glide}"
+    // coil
+    const val coil = "io.coil-kt:coil:${Versions.coil}"
 }

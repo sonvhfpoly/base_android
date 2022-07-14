@@ -39,6 +39,7 @@ android {
 dependencies {
     // local modules
     implementation(project(Dependencies.repoModule))
+    implementation(project(Dependencies.androidFramework))
     // Core libs
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appcompat)
@@ -67,6 +68,16 @@ dependencies {
 
     // retrofit
     implementation(Dependencies.retrofit)
+
+    // paging
+    implementation(Dependencies.paging)
+
+    // glide
+//    implementation(Dependencies.glide)
+//    kapt(Dependencies.glideProcessor)
+
+    // coild
+    implementation(Dependencies.coil)
 }
 
 // Allow references to generated code

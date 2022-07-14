@@ -1,4 +1,4 @@
-package com.vnextglobal.base.view
+package com.vnextglobal.aframework.xml
 
 import android.os.Bundle
 import android.view.LayoutInflater

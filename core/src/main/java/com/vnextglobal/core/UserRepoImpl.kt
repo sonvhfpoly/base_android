@@ -1,12 +1,11 @@
 package com.vnextglobal.core
 
+import com.vnextglobal.core.database.BaseDatabase
 import com.vnextglobal.core.model.User
-import com.vnextglobal.core.repo.LocalDbRepository
 import javax.inject.Inject
 
-class UserRepoImpl @Inject constructor(): UserRepository {
-    @Inject
-    internal lateinit var dbRepository: LocalDbRepository
+class UserRepoImpl @Inject internal constructor(private var baseDatabase: BaseDatabase): UserRepository {
+
     override fun getUserInfo(): User {
         return User(
             0,

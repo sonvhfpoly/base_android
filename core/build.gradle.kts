@@ -49,6 +49,9 @@ dependencies {
     implementation(Dependencies.retrofit)
     implementation(Dependencies.loggingInterceptor)
     implementation(Dependencies.gsonConverter)
+
+    // paging
+    implementation(Dependencies.paging)
 }
 
 // Allow references to generated code
