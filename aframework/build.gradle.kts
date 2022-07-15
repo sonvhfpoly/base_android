@@ -2,6 +2,7 @@ plugins {
     id(BuildPlugins.androidLibrary)
     id(BuildPlugins.androidLibraryKotlin)
     kotlin(BuildPlugins.kaptKotlin)
+    id(BuildPlugins.safeargs)
 }
 
 android {
@@ -45,6 +46,7 @@ dependencies {
     implementation(Dependencies.constraint)
     implementation(Dependencies.fragmentKtx)
     implementation(Dependencies.activityKtx)
+    implementation(Dependencies.swipeRefreshLayout)
 
     // glide
 //    implementation(Dependencies.glide)
@@ -52,4 +54,8 @@ dependencies {
 
     // coil
     implementation(Dependencies.coil)
+
+    // Navigation
+    implementation(Dependencies.navigationUiKtx)
+    implementation(Dependencies.navigationFragment)
 }

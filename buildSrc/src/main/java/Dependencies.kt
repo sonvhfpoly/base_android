@@ -5,6 +5,8 @@ object BuildPlugins {
     const val hilt = "dagger.hilt.android.plugin"
     const val androidLibrary = "com.android.library"
     const val androidLibraryKotlin = "org.jetbrains.kotlin.android"
+    const val safeargs = "androidx.navigation.safeargs.kotlin"
+    const val kotlinParcelize = "kotlin-parcelize"
 }
 
 object AppConfig {
@@ -36,6 +38,7 @@ object Dependencies {
         const val constraint = "2.1.4"
         const val fragmentKtx = "1.5.0"
         const val activityKtx = "1.5.0"
+        const val swipeRefreshLayout = "1.1.0"
         // Navigation
         const val navVersion = "2.5.0"
         // Test libs
@@ -56,6 +59,8 @@ object Dependencies {
         const val glide = "4.13.2"
         // coil
         const val coil = "2.1.0"
+        // image slider
+        const val imageSlider = "0.1.0"
     }
 
     // modules
@@ -68,6 +73,7 @@ object Dependencies {
     const val constraint = "androidx.constraintlayout:constraintlayout:${Versions.constraint}"
     const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}"
     const val activityKtx = "androidx.activity:activity-ktx:${Versions.activityKtx}"
+    const val swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefreshLayout}"
     // Navigation
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navVersion}"
     const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navVersion}"
@@ -92,4 +98,6 @@ object Dependencies {
     const val glideProcessor = "com.github.bumptech.glide:compiler:${Versions.glide}"
     // coil
     const val coil = "io.coil-kt:coil:${Versions.coil}"
+    // Images slideshow
+    const val imageSlider = "com.github.denzcoskun:ImageSlideshow:${Versions.imageSlider}"
 }

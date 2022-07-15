@@ -3,6 +3,7 @@ package com.vnextglobal.base.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.vnextglobal.base.R
 import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint

@@ -3,6 +3,7 @@ plugins {
     id(BuildPlugins.androidLibraryKotlin)
     kotlin(BuildPlugins.kaptKotlin)
     id(BuildPlugins.hilt)
+    id(BuildPlugins.kotlinParcelize)
 }
 
 android {

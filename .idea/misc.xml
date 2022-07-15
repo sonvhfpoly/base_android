@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/baseAndroid/aframework/src/main/res/layout/progress_imageview.xml" value="0.14130434782608695" />
+        <entry key="..\:/baseAndroid/app/src/main/res/layout/activity_detail_movie.xml" value="0.1" />
         <entry key="..\:/baseAndroid/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/baseAndroid/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/baseAndroid/app/src/main/res/layout/fragment_login.xml" value="0.14130434782608695" />

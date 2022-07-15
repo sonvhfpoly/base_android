@@ -3,6 +3,7 @@ plugins {
     kotlin(BuildPlugins.androidKotlin)
     kotlin(BuildPlugins.kaptKotlin)
     id(BuildPlugins.hilt)
+    id(BuildPlugins.safeargs)
 }
 
 android {
@@ -47,6 +48,7 @@ dependencies {
     implementation(Dependencies.constraint)
     implementation(Dependencies.fragmentKtx)
     implementation(Dependencies.activityKtx)
+    implementation(Dependencies.swipeRefreshLayout)
 
     // Navigation
     implementation(Dependencies.navigationUiKtx)
@@ -78,6 +80,8 @@ dependencies {
 
     // coild
     implementation(Dependencies.coil)
+
+    implementation(Dependencies.imageSlider)
 }
 
 // Allow references to generated code

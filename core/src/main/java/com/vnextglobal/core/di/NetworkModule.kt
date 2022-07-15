@@ -29,7 +29,7 @@ import javax.inject.Singleton
     @LoggerInterceptor
     @Provides
     fun provideLoggerInterceptor(): Interceptor{
-        return HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }
+        return HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
     }
 
     @LoggerOkHttp

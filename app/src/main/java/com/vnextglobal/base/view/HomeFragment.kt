@@ -1,8 +1,13 @@
 package com.vnextglobal.base.view
 
-import androidx.fragment.app.viewModels
+import android.content.Intent
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import com.vnextglobal.aframework.xml.BaseBindingFragment
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
+import com.vnextglobal.aframework.xml.BaseNavigationFragment
+import com.vnextglobal.base.R
 import com.vnextglobal.base.databinding.FragmentHomeBinding
 import com.vnextglobal.base.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -10,29 +15,32 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class HomeFragment: BaseBindingFragment<FragmentHomeBinding>() {
+class HomeFragment : BaseNavigationFragment<FragmentHomeBinding>() {
 
-    private val vm:HomeViewModel by viewModels()
+    private val vm: HomeViewModel by activityViewModels()
     private val adapter: MovieListAdapter by lazy {
-        MovieListAdapter()
+        MovieListAdapter { movie ->
+            if (movie.id != null) {
+                findNavController().navigate(
+                    HomeFragmentDirections.actionHomeFragmentToMovieDetailFragment(
+                        movie.id!!,
+                        movie.title
+                    )
+                )
+            }
+        }
     }
 
     override fun init() {
-//        val user = vm.getUserInfo()
-//        binding.tvUsername.text = user.firstName + user.lastName
-
-//        viewLifecycleOwner.lifecycleScope.launch {
-//            val movieList = vm.getRecommendedMovies()
-//            val moviesNameJoinStr = movieList.map {
-//                it.title
-//            }.joinToString()
-//            binding.tvUsername.text = moviesNameJoinStr
-//        }
         binding.rcvMovieList.adapter = adapter
+        requireActivity().setTitle(getString(R.string.app_name))
         viewLifecycleOwner.lifecycleScope.launch {
-            vm.getRecommendedMoviesFlow().collectLatest {
-                adapter.submitData(it)
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
+                vm.uiState.collectLatest {
+                    adapter.submitData(it)
+                }
             }
+
         }
     }
 

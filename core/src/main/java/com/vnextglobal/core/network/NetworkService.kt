@@ -2,6 +2,7 @@ package com.vnextglobal.core.network
 
 import com.vnextglobal.core.model.MovieDetail
 import com.vnextglobal.core.model.MovieDiscoverResult
+import com.vnextglobal.core.model.MovieImagesResult
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -19,4 +20,11 @@ import retrofit2.http.Query
         @Path("id") id: Int,
         @Query("api_key") apiKey: String = NetworkConstants.API_KEY
     ):MovieDetail
-}
+
+     @GET("movie/{id}/images")
+     suspend fun getMovieImages(
+         @Path("id") id: Int,
+         @Query("api_key") apiKey: String = NetworkConstants.API_KEY
+     ):MovieImagesResult
+
+ }
